@@ -1,19 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Faker.Library.Generators;
 using Faker.Library.Generators.Entity;
 
-namespace Faker.Generator.Collections
+namespace Faker.Library.Generators.Impl.CollectionGenerators
 {
     public class StackGenerator<T> : IGenerator
     {
-
-        public StackGenerator()
-        {
-            
-        }
-        
         public object Generate(GeneratorContext context)
         {
             var size = context.Random.Next(1, 20);
@@ -24,11 +16,6 @@ namespace Faker.Generator.Collections
             }
 
             return stack;
-        }
-
-        public string GetGeneratorType()
-        {
-            return typeof(Stack<T>).ToString();
         }
     }
 }

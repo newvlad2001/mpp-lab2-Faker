@@ -1,17 +1,11 @@
 using System;
 using System.Collections;
-using Faker.Library.Generators;
 using Faker.Library.Generators.Entity;
 
-namespace Faker.Generator.Collections
+namespace Faker.Library.Generators.Impl.CollectionGenerators
 {
     public class BitArrayGenerator : IGenerator
     {
-        public BitArrayGenerator()
-        {
-            
-        }
-        
         public object Generate(GeneratorContext context)
         {
             var size = context.Random.Next(1, 20);
@@ -23,11 +17,6 @@ namespace Faker.Generator.Collections
             }
             
             return new BitArray(array);
-        }
-
-        public string GetGeneratorType()
-        {
-            return typeof(BitArray).ToString();
         }
     }
 }

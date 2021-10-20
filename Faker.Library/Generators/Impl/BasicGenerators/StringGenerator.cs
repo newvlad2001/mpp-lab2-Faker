@@ -1,16 +1,10 @@
-﻿using Faker.Library.Generators;
-using Faker.Library.Generators.Entity;
+﻿using Faker.Library.Generators.Entity;
 using System.Text;
 
-namespace Faker.Generator.ScalarValues
+namespace Faker.Library.Generators.Impl.BasicGenerators
 {
     public class StringGenerator : IGenerator
     {
-        public StringGenerator()
-        {
-            
-        }
-        
         public object Generate(GeneratorContext context)
         {
             var size = context.Random.Next(1, 20);
@@ -20,11 +14,6 @@ namespace Faker.Generator.ScalarValues
                 stringBuilder.Append((char) context.Random.Next());
 
             return stringBuilder.ToString();
-        }
-
-        public string GetGeneratorType()
-        {
-            return typeof(string).ToString();
         }
     }
 }

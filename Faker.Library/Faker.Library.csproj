@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Generators\Impl\CollectionGenerator\" />
-    <Folder Include="Generators\Impl\PrimitiveGenerator\" />
+    <Folder Include="Generators\Impl\CollectionGenerators\" />
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,9 @@
-﻿using Faker.Library.Generators;
-using Faker.Library.Generators.Entity;
+﻿using Faker.Library.Generators.Entity;
 
-namespace Faker.Generator.ScalarValues
+namespace Faker.Library.Generators.Impl.BasicGenerators
 {
     public class LongGenerator : IGenerator
     {
-        public LongGenerator()
-        {
-            
-        }
-        
         public object Generate(GeneratorContext context)
         {
             long result = context.Random.Next(int.MinValue >> 32, int.MaxValue >> 32);
@@ -19,11 +13,6 @@ namespace Faker.Generator.ScalarValues
             
             return result;
             
-        }
-
-        public string GetGeneratorType()
-        {
-            return typeof(long).ToString();
         }
     }
 }
