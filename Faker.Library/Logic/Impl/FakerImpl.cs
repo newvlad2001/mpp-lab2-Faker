@@ -31,10 +31,6 @@ namespace Faker.Library.Logic.Impl
                 .Where(t => t.GetInterfaces().Contains(generatorType) && t.IsClass)
                 .Select(t => (IGenerator)Activator.CreateInstance(t));
             _generators = impls.ToList();
-            foreach (var g in _generators)
-            {
-                Console.WriteLine(g.GetType());
-            }
         }
 
         public T Create<T>()
@@ -80,6 +76,10 @@ namespace Faker.Library.Logic.Impl
                     }
 
                     return constructor.Invoke(parameters.ToArray());
+                }
+                catch (CyclicDependencyException)
+                {
+                    throw;
                 }
                 catch
                 {

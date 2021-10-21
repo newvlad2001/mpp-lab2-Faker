@@ -9,6 +9,6 @@ namespace Faker.Library.Logic
     public interface IFaker
     {
         public T Create<T>();
-        object Create(Type t);
+        public object Create(Type t);
     }
 }
