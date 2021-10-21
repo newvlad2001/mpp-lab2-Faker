@@ -4,10 +4,7 @@ using Faker.Library.Exceptions;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Faker.UnitTests
 {
@@ -52,7 +49,7 @@ namespace Faker.UnitTests
 
         [TestCase(' ')]
         [TestCase(0UL)]
-        public void FakerImpl_CreateBasicTypes_ArgumentExceptionThrows<T>(T par)
+        public void FakerImpl_NoSuchGenerator_ArgumentExceptionThrows<T>(T par)
         {
             Assert.Throws<ArgumentException>(() => faker.Create<T>());
         }

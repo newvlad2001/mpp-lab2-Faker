@@ -10,7 +10,7 @@ namespace Faker.Library.Generators.Impl.CollectionGenerators
         public object Generate(GeneratorContext context)
         {
             var size = context.Random.Next(1, 20);
-            var list = (IList) Activator.CreateInstance(context.TargetType);
+            var list = (IList)Activator.CreateInstance(context.TargetType);
 
             for (int i = 0; i < size; i++)
             {

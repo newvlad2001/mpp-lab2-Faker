@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Library", "Faker.Library\Faker.Library.csproj", "{8AE5101C-93CF-42E3-A10B-04C74ED84133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.Library", "Faker.Library\Faker.Library.csproj", "{8AE5101C-93CF-42E3-A10B-04C74ED84133}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.UnitTests", "Faker.UnitTests\Faker.UnitTests.csproj", "{E8E469DA-9B5E-4F2A-AAE5-D9BC0BED7A14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.ConsoleApplication", "Faker.ConsoleApplication\Faker.ConsoleApplication.csproj", "{0609E46C-6F62-434F-81C1-1F70280B05D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.IntGenerator", "Faker.IntGenerator\Faker.IntGenerator.csproj", "{07BAAD10-FF5E-41EF-B8AC-765F324B2E01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.ListGenerator", "Faker.ListGenerator\Faker.ListGenerator.csproj", "{9F8653EF-417E-4AD5-8DEA-7DA6D7250846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{8AE5101C-93CF-42E3-A10B-04C74ED84133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE5101C-93CF-42E3-A10B-04C74ED84133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE5101C-93CF-42E3-A10B-04C74ED84133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E469DA-9B5E-4F2A-AAE5-D9BC0BED7A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E469DA-9B5E-4F2A-AAE5-D9BC0BED7A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E469DA-9B5E-4F2A-AAE5-D9BC0BED7A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E469DA-9B5E-4F2A-AAE5-D9BC0BED7A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0609E46C-6F62-434F-81C1-1F70280B05D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0609E46C-6F62-434F-81C1-1F70280B05D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0609E46C-6F62-434F-81C1-1F70280B05D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0609E46C-6F62-434F-81C1-1F70280B05D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BAAD10-FF5E-41EF-B8AC-765F324B2E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BAAD10-FF5E-41EF-B8AC-765F324B2E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BAAD10-FF5E-41EF-B8AC-765F324B2E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BAAD10-FF5E-41EF-B8AC-765F324B2E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8653EF-417E-4AD5-8DEA-7DA6D7250846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8653EF-417E-4AD5-8DEA-7DA6D7250846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8653EF-417E-4AD5-8DEA-7DA6D7250846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8653EF-417E-4AD5-8DEA-7DA6D7250846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

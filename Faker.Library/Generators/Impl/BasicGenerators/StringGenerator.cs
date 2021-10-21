@@ -12,7 +12,7 @@ namespace Faker.Library.Generators.Impl.BasicGenerators
             var stringBuilder = new StringBuilder();
 
             for (var i = 0; i < size; i++)
-                stringBuilder.Append((char) context.Random.Next());
+                stringBuilder.Append((char)context.Random.Next());
 
             return stringBuilder.ToString();
         }

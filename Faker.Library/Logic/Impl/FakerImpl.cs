@@ -12,13 +12,14 @@ namespace Faker.Library.Logic.Impl
     public class FakerImpl : IFaker
     {
         private List<IGenerator> _generators;
-        private List<Type> _cycleDependClassHolder;
+        private List<Type> _createdTypesHolder;
         private Random _randomizer;
 
         public FakerImpl()
         {
             _randomizer = new Random();
-            _cycleDependClassHolder = new List<Type>();
+            _createdTypesHolder = new List<Type>();
+            _generators = new List<IGenerator>();
 
             LoadGenerators();
         }
@@ -26,11 +27,17 @@ namespace Faker.Library.Logic.Impl
         private void LoadGenerators()
         {
             var generatorType = typeof(IGenerator);
-            var impls = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(a => a.GetTypes())
-                .Where(t => t.GetInterfaces().Contains(generatorType) && t.IsClass)
-                .Select(t => (IGenerator)Activator.CreateInstance(t));
-            _generators = impls.ToList();
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var a in assemblies)
+            {
+                foreach (var t in a.GetTypes())
+                {
+                    if (t.IsClass && t.GetInterfaces().Contains(generatorType))
+                    {
+                        _generators.Add((IGenerator)Activator.CreateInstance(t));
+                    }
+                }
+            }
         }
 
         public T Create<T>()
@@ -45,18 +52,18 @@ namespace Faker.Library.Logic.Impl
                 if (g.CanGenerate(type)) return g.Generate(new GeneratorContext(_randomizer, type, this));
             }
 
-            if (_cycleDependClassHolder.Contains(type))
+            if (_createdTypesHolder.Contains(type))
             {
-                throw new CyclicDependencyException("Cycle dependency was detected.");
+                throw new CyclicDependencyException("Cyclic dependency was detected.");
             }
 
-            _cycleDependClassHolder.Add(type);
+            _createdTypesHolder.Add(type);
 
             object obj = Init(type);
             InitProperties(obj);
             InitFields(obj);
 
-            _cycleDependClassHolder.Remove(type);
+            _createdTypesHolder.Remove(type);
 
             return obj;
         }

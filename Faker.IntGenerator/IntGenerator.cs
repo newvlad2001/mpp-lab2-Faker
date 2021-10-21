@@ -7,7 +7,7 @@ namespace Faker.Library.Generators.Impl.BasicGenerators
     {
         public object Generate(GeneratorContext context)
         {
-            return context.Random.Next(int.MinValue, int.MaxValue);
+            return context.Random.Next();
         }
 
         public bool CanGenerate(Type t)
