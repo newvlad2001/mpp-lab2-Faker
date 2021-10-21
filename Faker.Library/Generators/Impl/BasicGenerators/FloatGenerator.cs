@@ -12,5 +12,10 @@ namespace Faker.Library.Generators.Impl.BasicGenerators
             
             return (float)(mantissa * exponent);
         }
+
+        public bool CanGenerate(Type t)
+        {
+            return typeof(float) == t;
+        }
     }
 }

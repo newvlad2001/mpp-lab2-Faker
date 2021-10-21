@@ -1,4 +1,5 @@
 ﻿using Faker.Library.Generators.Entity;
+using System;
 using System.Text;
 
 namespace Faker.Library.Generators.Impl.BasicGenerators
@@ -14,6 +15,11 @@ namespace Faker.Library.Generators.Impl.BasicGenerators
                 stringBuilder.Append((char) context.Random.Next());
 
             return stringBuilder.ToString();
+        }
+
+        public bool CanGenerate(Type t)
+        {
+            return typeof(string) == t;
         }
     }
 }

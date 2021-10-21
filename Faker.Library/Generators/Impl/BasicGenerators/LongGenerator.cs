@@ -1,4 +1,5 @@
 ﻿using Faker.Library.Generators.Entity;
+using System;
 
 namespace Faker.Library.Generators.Impl.BasicGenerators
 {
@@ -12,7 +13,11 @@ namespace Faker.Library.Generators.Impl.BasicGenerators
             result |= context.Random.Next(int.MinValue, int.MaxValue);
             
             return result;
-            
+        }
+
+        public bool CanGenerate(Type t)
+        {
+            return typeof(long) == t;
         }
     }
 }

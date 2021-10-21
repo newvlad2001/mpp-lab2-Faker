@@ -18,5 +18,10 @@ namespace Faker.Library.Generators.Impl.CollectionGenerators
             
             return new BitArray(array);
         }
+
+        public bool CanGenerate(Type t)
+        {
+            return typeof(BitArray) == t;
+        }
     }
 }
